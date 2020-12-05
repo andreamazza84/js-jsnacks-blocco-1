@@ -136,3 +136,40 @@
 //JSNACK BLOCCO 5
 
 //JSnack 1
+// Crea 10 oggetti che rappresentano una zucchina,
+// indicando per ognuna varietà, peso e lunghezza.
+// Calcola quanto pesano tutte le zucchine.
+
+class Zucchina{
+    constructor(tipo, peso, lunghezza){
+      this.tipo = tipo,
+      this.peso = peso,
+      this.lunghezza = lunghezza
+    }
+}
+
+var zucchine = [
+    new Zucchina("nera di Milano", 0, 0),
+    new Zucchina("romanesco", 0, 0),
+    new Zucchina("fiorentina", 0, 0),
+    new Zucchina("siciliano", 0, 0),
+    new Zucchina("napoletana", 0, 0),
+    new Zucchina("triestina", 0, 0),
+    new Zucchina("pugliese", 0, 0),
+    new Zucchina("faentina", 0, 0),
+    new Zucchina("piacentina", 0, 0),
+    new Zucchina("tonda di Nizza", 0, 0),
+];
+
+var pesoTot = 0;
+for (var index = 0; index < zucchine.length; index++) {
+    zucchine[index]['peso'] = randomNum(200, 100);
+    zucchine[index]['lunghezza'] = randomNum(40, 15);    
+    pesoTot += zucchine[index]['peso'] = randomNum(200, 100); 
+}
+
+function randomNum(max, min){
+    return number = Math.floor(Math.random()*(max - min)) + min;
+}
+
+console.log('Il peso di tutte le zucchine è: ' + pesoTot + 'g');
