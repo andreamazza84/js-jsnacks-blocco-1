@@ -253,18 +253,66 @@
 //     elementi da uno e dall’altro
 //     es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
 
-var numeri = [0,1,2,3,4,5,6,7,8,9];
-var lettere = ['a','b','c','d','e','f','g','h','i','l'];
+// var numeri = [0,1,2,3,4,5,6,7,8,9];
+// var lettere = ['a','b','c','d','e','f','g','h','i','l'];
 
-function mix(array1, array2){
-    var mix = [];
-    var j = 0;
-    for(var i = 0; i < numeri.length; i++){
-        j = 2*i;
-        mix[j] = numeri[i];
-        mix[j+1] = lettere[i];
+// function mix(array1, array2){
+//     var mix = [];
+//     var j = 0;
+//     for(var i = 0; i < numeri.length; i++){
+//         j = 2*i;
+//         mix[j] = numeri[i];
+//         mix[j+1] = lettere[i];
+//     }
+//     return mix;
+// }
+
+// console.log(mix(numeri, lettere));
+
+// JSnack 5
+// Scrivi una funzione che accetti tre argomenti:
+// un array e due numeri (“a” più piccolo di “b” e “b” grande al
+// massimo quanto il numero di elementi dell’array).
+// La funzione ritornerà un nuovo array con i valori che
+// hanno la posizione compresa tra “a” e “b”
+
+/**Genera un lista di valori casuali di valore compreso tra min e max, di lunghezza length.
+ * 
+ * @param min {*valore più piccolo da inserire}  
+ * @param max {*valore più grande da inserire} 
+ * @param length {*lunghezza dell'array}
+ */
+function list(min, max, length) {
+    var array = [];
+    for (var i = 0; i < length; i++) {
+        array[i] = Math.floor(Math.random()*(max - min)) + min;
     }
-    return mix;
+    return array;    
+  }
+
+/**Accetta un array di cui resistuisce il contenuto tra gli indici a e b.
+ * 
+ * @param a {*indice minore di b} 
+ * @param b {*indice maggiore di a e minore uguale alla lunghezza di array} 
+ * @param array {*array} 
+ */
+function trim(a, b, array){
+    //Impedisco l'inserimento di valori dell'indice b più grandi della dimensione delll'array.
+    if(b > array.length){
+        b = array.length;
+    }
+    var i = 0;
+    var trimArray = [];
+    while(i < array.length){
+        if(i < a || i > b){
+            trimArray[i] = 0; 
+        }
+        else{
+            trimArray[i] = array[i]; 
+        }
+        i++;
+    }
+    return trimArray;
 }
 
-console.log(mix(numeri, lettere));
+console.log(trim(3,25, list(10, 100, 30)));
