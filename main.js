@@ -140,36 +140,51 @@
 // indicando per ognuna varietà, peso e lunghezza.
 // Calcola quanto pesano tutte le zucchine.
 
-class Zucchina{
-    constructor(tipo, peso, lunghezza){
-      this.tipo = tipo,
-      this.peso = peso,
-      this.lunghezza = lunghezza
+// class Zucchina{
+//     constructor(tipo, peso, lunghezza){
+//       this.tipo = tipo,
+//       this.peso = peso,
+//       this.lunghezza = lunghezza
+//     }
+// }
+
+// var zucchine = [
+//     new Zucchina("nera di Milano", 0, 0),
+//     new Zucchina("romanesco", 0, 0),
+//     new Zucchina("fiorentina", 0, 0),
+//     new Zucchina("siciliano", 0, 0),
+//     new Zucchina("napoletana", 0, 0),
+//     new Zucchina("triestina", 0, 0),
+//     new Zucchina("pugliese", 0, 0),
+//     new Zucchina("faentina", 0, 0),
+//     new Zucchina("piacentina", 0, 0),
+//     new Zucchina("tonda di Nizza", 0, 0),
+// ];
+
+// var pesoTot = 0;
+// for (var index = 0; index < zucchine.length; index++) {
+//     zucchine[index]['peso'] = randomNum(200, 100);
+//     zucchine[index]['lunghezza'] = randomNum(40, 15);    
+//     pesoTot += zucchine[index]['peso'] = randomNum(200, 100); 
+// }
+
+// function randomNum(max, min){
+//     return number = Math.floor(Math.random()*(max - min)) + min;
+// }
+
+// console.log('Il peso di tutte le zucchine è: ' + pesoTot + 'g');
+
+//JSnack 2
+// Scrivi una funzione che accetti una stringa come
+// argomento e la ritorni girata (es. Ciao -> oaiC)
+
+function mirror(string) {
+var mirrorWord = "";
+    for(var i=string.length-1; i >= 0; i--){
+        mirrorWord += string[i]
     }
+    return mirrorWord;
 }
 
-var zucchine = [
-    new Zucchina("nera di Milano", 0, 0),
-    new Zucchina("romanesco", 0, 0),
-    new Zucchina("fiorentina", 0, 0),
-    new Zucchina("siciliano", 0, 0),
-    new Zucchina("napoletana", 0, 0),
-    new Zucchina("triestina", 0, 0),
-    new Zucchina("pugliese", 0, 0),
-    new Zucchina("faentina", 0, 0),
-    new Zucchina("piacentina", 0, 0),
-    new Zucchina("tonda di Nizza", 0, 0),
-];
-
-var pesoTot = 0;
-for (var index = 0; index < zucchine.length; index++) {
-    zucchine[index]['peso'] = randomNum(200, 100);
-    zucchine[index]['lunghezza'] = randomNum(40, 15);    
-    pesoTot += zucchine[index]['peso'] = randomNum(200, 100); 
-}
-
-function randomNum(max, min){
-    return number = Math.floor(Math.random()*(max - min)) + min;
-}
-
-console.log('Il peso di tutte le zucchine è: ' + pesoTot + 'g');
+var word = prompt("Inserisci una parola");
+alert("Ecco il risultato invertendo l'ordine delle lettere: " + mirror(word));
