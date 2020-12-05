@@ -196,53 +196,75 @@
 // Infine stampa separatamente quanto pesano i due gruppi
 // di zucchine
 
-class Zucchina{
-    constructor(tipo, peso, lunghezza){
-      this.tipo = tipo,
-      this.peso = peso,
-      this.lunghezza = lunghezza
-    }
-}
+// class Zucchina{
+//     constructor(tipo, peso, lunghezza){
+//       this.tipo = tipo,
+//       this.peso = peso,
+//       this.lunghezza = lunghezza
+//     }
+// }
 
-var zucchine = [
-    new Zucchina("nera di Milano", 0, 0),
-    new Zucchina("romanesco", 0, 0),
-    new Zucchina("fiorentina", 0, 0),
-    new Zucchina("siciliano", 0, 0),
-    new Zucchina("napoletana", 0, 0),
-    new Zucchina("triestina", 0, 0),
-    new Zucchina("pugliese", 0, 0),
-    new Zucchina("faentina", 0, 0),
-    new Zucchina("piacentina", 0, 0),
-    new Zucchina("tonda di Nizza", 0, 0),
-];
+// var zucchine = [
+//     new Zucchina("nera di Milano", 0, 0),
+//     new Zucchina("romanesco", 0, 0),
+//     new Zucchina("fiorentina", 0, 0),
+//     new Zucchina("siciliano", 0, 0),
+//     new Zucchina("napoletana", 0, 0),
+//     new Zucchina("triestina", 0, 0),
+//     new Zucchina("pugliese", 0, 0),
+//     new Zucchina("faentina", 0, 0),
+//     new Zucchina("piacentina", 0, 0),
+//     new Zucchina("tonda di Nizza", 0, 0),
+// ];
 
-var corte = [];
-var lunghe = [];
-var pesoCorte = 0;
-var pesoLunghe = 0;
-var pesoTot = 0;
+// var corte = [];
+// var lunghe = [];
+// var pesoCorte = 0;
+// var pesoLunghe = 0;
+// var pesoTot = 0;
 
-for (var index = 0; index < zucchine.length; index++) {
-    zucchine[index]['peso'] = randomNum(200, 100);
-    zucchine[index]['lunghezza'] = randomNum(30, 10);    
-    if(zucchine[index]['lunghezza'] > 15){
-        lunghe.push(zucchine[index]);
-        pesoLunghe += zucchine[index]['peso']
-    }
-    else{
-        corte.push(zucchine[index]);
-        pesoCorte += zucchine[index]['peso']
-    }
+// for (var index = 0; index < zucchine.length; index++) {
+//     zucchine[index]['peso'] = randomNum(200, 100);
+//     zucchine[index]['lunghezza'] = randomNum(30, 10);    
+//     if(zucchine[index]['lunghezza'] > 15){
+//         lunghe.push(zucchine[index]);
+//         pesoLunghe += zucchine[index]['peso']
+//     }
+//     else{
+//         corte.push(zucchine[index]);
+//         pesoCorte += zucchine[index]['peso']
+//     }
     
-    pesoTot += zucchine[index]['peso'];
+//     pesoTot += zucchine[index]['peso'];
+// }
+
+// console.log("Il peso di tutte le zucchine > 15 cm è: " + pesoLunghe);
+// console.log("Il peso di tutte le zucchine <= 15 cm è" + pesoCorte);
+// //console.log(pesoLunghe+pesoCorte);
+// //console.log(pesoTot);
+
+// function randomNum(max, min){
+//     return number = Math.floor(Math.random()*(max - min)) + min;
+// }
+
+// JSnack 4
+// Scrivi una funzione che fonda due array (con lo stesso
+//     numero di elementi) prendendo alternativamente gli
+//     elementi da uno e dall’altro
+//     es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+
+var numeri = [0,1,2,3,4,5,6,7,8,9];
+var lettere = ['a','b','c','d','e','f','g','h','i','l'];
+
+function mix(array1, array2){
+    var mix = [];
+    var j = 0;
+    for(var i = 0; i < numeri.length; i++){
+        j = 2*i;
+        mix[j] = numeri[i];
+        mix[j+1] = lettere[i];
+    }
+    return mix;
 }
 
-console.log("Il peso di tutte le zucchine > 15 cm è: " + pesoLunghe);
-console.log("Il peso di tutte le zucchine <= 15 cm è" + pesoCorte);
-//console.log(pesoLunghe+pesoCorte);
-//console.log(pesoTot);
-
-function randomNum(max, min){
-    return number = Math.floor(Math.random()*(max - min)) + min;
-}
+console.log(mix(numeri, lettere));
